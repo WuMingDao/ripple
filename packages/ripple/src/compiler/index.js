@@ -25,9 +25,10 @@ export function parse(source) {
 export function compile(source, filename, options = {}) {
 	const ast = parse_module(source);
 	const analysis = analyze(ast, filename, options);
-	const result = options.mode === 'server'
-		? transform_server(filename, source, analysis)
-		: transform_client(filename, source, analysis, false);
+	const result =
+		options.mode === 'server'
+			? transform_server(filename, source, analysis)
+			: transform_client(filename, source, analysis, false);
 
 	return result;
 }
@@ -51,7 +52,7 @@ export function compile_to_volar_mappings(source, filename) {
 		source,
 		transformed.js.code,
 		transformed.js.map,
-    /** @type {PostProcessingChanges} */(transformed.js.post_processing_changes),
-    /** @type {LineOffsets} */(transformed.js.line_offsets)
+		/** @type {PostProcessingChanges} */ (transformed.js.post_processing_changes),
+		/** @type {LineOffsets} */ (transformed.js.line_offsets),
 	);
 }

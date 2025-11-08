@@ -5,8 +5,8 @@ describe('switch statements', () => {
 		component App() {
 			let value = track('b');
 
-			<button onClick={() => @value = 'c'}>{'Change to C'}</button>
-			<button onClick={() => @value = 'a'}>{'Change to A'}</button>
+			<button onClick={() => (@value = 'c')}>{'Change to C'}</button>
+			<button onClick={() => (@value = 'a')}>{'Change to A'}</button>
 
 			switch (@value) {
 				case 'a':
@@ -69,7 +69,7 @@ describe('switch statements', () => {
 		component App() {
 			let value = track('x');
 
-			<button onClick={() => @value = 'y'}>{'Change Value'}</button>
+			<button onClick={() => (@value = 'y')}>{'Change Value'}</button>
 
 			switch (@value) {
 				default:
@@ -90,9 +90,9 @@ describe('switch statements', () => {
 			let status = track('active');
 			let message = track('');
 
-			<button onClick={() => @status = 'pending'}>{'Pending'}</button>
-			<button onClick={() => @status = 'completed'}>{'Completed'}</button>
-			<button onClick={() => @status = 'error'}>{'Error'}</button>
+			<button onClick={() => (@status = 'pending')}>{'Pending'}</button>
+			<button onClick={() => (@status = 'completed')}>{'Completed'}</button>
+			<button onClick={() => (@status = 'error')}>{'Error'}</button>
 
 			switch (@status) {
 				case 'active':

@@ -44,7 +44,10 @@ export function build_source_to_generated_map(source_map, post_processing_change
 
 		while (left <= right) {
 			const mid = Math.floor((left + right) / 2);
-			if (offset >= line_offsets[mid] && (mid === line_offsets.length - 1 || offset < line_offsets[mid + 1])) {
+			if (
+				offset >= line_offsets[mid] &&
+				(mid === line_offsets.length - 1 || offset < line_offsets[mid + 1])
+			) {
 				line = mid + 1;
 				break;
 			} else if (offset < line_offsets[mid]) {
